@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background: url("desktop-wallpaper.jpg") no-repeat;
+    color: white;
+}
+
+header {
+    margin-top: 1em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    z-index: 99;
+    padding: auto;
+}
+
+.logo {
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+}
+
+.navigation .a1 {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+
+}
+
+.navigation .a1::after {
+    content: '';
+    right: 1px;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    bottom: -6px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .5s;
+}
+
+.navigation .a1:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.navigation .btnlogin-form {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation .btnlogin-form:hover {
+    background: #fff;
+    color: #162938;
+}
+
+.navigation .btnlogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 50px;
+}
+
+.navigation .btnlogin-popup:hover {
+    background: #fff;
+    color: #162938;
+}
+
+.navigation .btn-teleport {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 46px;
+}
+
+.navigation .btn-teleport:hover {
+    background: #fff;
+    color: #162938;
+}
+
+.table{
+    border:1pt solid white;
+    margin-top:10%;
+    margin-left:2%;
+}
+
+button{
+    color:white;
+    background:black;
+    font-size:100%;
+    border:1px solid white;
+    width:100%;
+    height:100%;
+}
+
+.not-visited{
+    background:white;
+    border-radius:25px;
+    cursor:progress;
+    color:red;
+}
+
+.table-comment{
+    border:1pt solid white;
+    width:66.9px;
+}
+
+.no-background{
+    height:100%;
+}
+
+input[type = text]{
+    width:100%;
+    height:100%;
+    font-size:100%;
+}
+
+input[type = date]{
+    width:100%;
+    font-size:100%;
+    height:100%;
+}
+
+textarea{
+    width:100%;
+    height:100%;
+    font-size:100%;
+}
