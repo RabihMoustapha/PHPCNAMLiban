@@ -11,70 +11,32 @@ if ($_SESSION['isloggedin'] != 1) {
         <title>Contact</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            body {
-                color: white;
-                background: black;
-                padding: 0;
-                margin: 0;
-                font-family: Arial, Helvetica, sans-serif;
-            }
-
-            form {
-                margin-top: 4rem;
-                width: 100%;
-            }
-
-            table {
-                width: 100%;
-            }
-
-            table tr .first {
-                width: 15%;
-            }
-
-            table tr .second {
-                width: 85%;
-            }
-
-            input {
-                padding: 0.5rem;
-                box-sizing: border-box;
-                width: 100%;
-            }
-
-            .area {
-                width: 100%;
-                resize: none;
-                padding: 0.5rem;
-                box-sizing: border-box;
-            }
-
-            .footer {
-                padding: 0.5rem;
-                box-sizing: border-box;
-                width: 100%;
-                display: flex;
-                justify-content: flex-end;
-            }
-
-            .footer button {
-                padding: 0.5rem;
-                box-sizing: border-box;
-                border: 0;
-                border-radius: 4px;
-                background-color: gray;
-                cursor: pointer;
-                transition: 0.2s;
-                color: black;
-                background-color: white;
-            }
-        </style>
+        <link href="Contact.css" rel="stylesheet" type="text/css">
     </head>
 
     <body>
+        <!--Starting a header-->
+    <header>
+            <h2 class="logo">
+                <i class="fa fa-sign-in" style="font-size:48px;color:red">
+                </i>
+            </h2>
+            <nav class="navigation">
+                <a  class="a1" href="Home.php">HOME</a>
+                <a class="a1" href="About.php">ABOUT</a>
+                <a class="a1" href="Service.php">SERVICES</a>
+                <a class="not-visited">CONTACT</a>
+                <a href="Log-out.php">
+                    <button class="btnlogin-popup">
+                        LOGOUT
+                    </button>
+                </a>
+            </nav>
+        </header>
+        <!--End of header-->
+        <!--Starting a form-->
         <form action="InsertC.php" method="post">
-            <table border="0" cellpadding="10">
+            <table border="0" class="table" cellpadding="10">
                 <tr>
                     <td class="first">
                         <b>
@@ -130,6 +92,7 @@ if ($_SESSION['isloggedin'] != 1) {
                 <button type="submit">Contact us</button>
             </div>
         </form>
+        <!--End the form-->
     </body>
 
 </html>

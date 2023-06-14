@@ -62,25 +62,6 @@ header {
     transform: scaleX(1);
 }
 
-.navigation .btnlogin-form {
-    width: 130px;
-    height: 50px;
-    background: transparent;
-    border: 2px solid #fff;
-    outline: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1.1em;
-    color: #fff;
-    font-weight: 500;
-    margin-left: 40px;
-}
-
-.navigation .btnlogin-form:hover {
-    background: #fff;
-    color: #162938;
-}
-
 .navigation .btnlogin-popup {
     width: 130px;
     height: 50px;
@@ -100,21 +81,51 @@ header {
     color: #162938;
 }
 
-.navigation .btn-teleport {
-    width: 130px;
-    height: 50px;
-    background: transparent;
-    border: 2px solid #fff;
-    outline: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1.1em;
-    color: #fff;
-    font-weight: 500;
-    margin-left: 46px;
+.table{
+    border:1pt solid white;
+    margin-top:10%;
+    margin-left:2%;
 }
 
-.navigation .btn-teleport:hover {
-    background: #fff;
-    color: #162938;
+button{
+    color:white;
+    background:black;
+    font-size:100%;
+    border:1px solid white;
+    width:100%;
+    height:100%;
+}
+
+.not-visited{
+    background:white;
+    border-radius:25px;
+    cursor:progress;
+    color:red;
+}
+
+.table-comment{
+    border:1pt solid white;
+    width:66.9px;
+}
+
+.no-background{
+    height:100%;
+}
+
+input[type = text]{
+    width:100%;
+    height:100%;
+    font-size:100%;
+}
+
+input[type = date]{
+    width:100%;
+    font-size:100%;
+    height:100%;
+}
+
+textarea{
+    width:100%;
+    height:100%;
+    font-size:100%;
 }
