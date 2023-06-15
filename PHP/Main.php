@@ -27,11 +27,6 @@ if ($_SESSION['isloggedin'] != 1) {
                         <td>
                             <button onclick="Form.action = 'View.php'" class="btnlogin-popup">VIEW</button>
                         </td>
-                        <!--Teleport-->
-                        <td>
-                            <button onclick="teleport()" class="btnlogin-popup">TELEPORT</button>
-                        </td>
-                        <!--End of teleport-->
                         <!--Log-out-->
                         <td>
                             <a href="Log-out.php">
@@ -42,9 +37,17 @@ if ($_SESSION['isloggedin'] != 1) {
                         </td>
                         <!--End of log-out-->
                     </tr>
-
                 </table>
             </form>
+            <table>
+                <tr>
+                    <!--Teleport-->
+                    <td>
+                        <button onclick="teleport()" class="btn-teleport">TELEPORT</button>
+                    </td>
+                    <!--End of teleport-->
+                </tr>
+            </table>
         </nav>
     </header>
 </body>

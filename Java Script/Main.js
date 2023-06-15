@@ -1,24 +1,24 @@
 function teleport() {
     var intro = alert("- Home \n - About \n - Service \n - Contact \n PAGE ONLY");
-    var a = prompt("Enter a page to teleport");
-    a = a.toLowerCase();
-    while (a != "home" && a != "service" && a != "about" && a != "contact") {
+    var teleport = prompt("Enter a page to teleport");
+    teleport = teleport.toLowerCase();
+    while (teleport != "home" && teleport != "service" && teleport != "about" && teleport != "contact") {
         intro = alert("- Home \n - About \n - Service \n - Contact \n PAGE ONLY");
-        a = prompt("Enter a page to teleport");
-        a = a.toLowerCase();
+        teleport = prompt("Enter a page to teleport");
+        teleport = teleport.toLowerCase();
     }
-    switch (a) {
+    switch (teleport) {
         case 'home' :
-            window.location.href = "../PHP/Home.php";
+            window.location.href = "Home.php";
             break;
         case 'service' :
-            window.location.href = "../PHP/Service.php";
+            window.location.href = "Service.php";
             break;
         case 'about' :
-            window.location.href = "../PHP/About.php";
+            window.location.href = "About.php";
             break;
         case 'contact' :
-            window.location.href = "../PHP/Contact.php";
+            window.location.href = "Contact.php";
             break;
     }
 }
