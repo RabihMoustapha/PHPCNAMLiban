@@ -5,15 +5,7 @@
     <title>CR PAGE</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style>
-	a:visited {
-		color: red;
-	}
-
-	a:link {
-		color: blue;
-	}
-</style>
+    <link href="../Css/Cr.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>

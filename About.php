@@ -12,7 +12,7 @@ if ($_SESSION['isloggedin'] != 1) {
         <title>About</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="About.css" type="text/css" rel="stylesheet">
+        <link href="../Css/About.css" type="text/css" rel="stylesheet">
     </head>
     <body>      <!--Intro to about page-->
         <table align="center">

@@ -5,11 +5,6 @@
     <title>GOD OF WAR</title>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <style>
-        iframe:hover {
-            transform: scale(1.5);
-        }
-    </style>
 </head>
 
 <body>

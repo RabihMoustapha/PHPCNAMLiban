@@ -48,7 +48,7 @@ if (isset($_POST['gamename']) && isset($_POST['downloability']) && isset($_POST[
 <html>
     <head>
         <title>Add</title>
-        <link href="Add.css" rel="stylesheet" type="text/css">
+        <link href="../Css/Add.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <form name="f1" method="post">

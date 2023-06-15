@@ -12,11 +12,9 @@
             $Pass = $_POST["pass"];
             $query = "INSERT INTO `login` (`Name`, `Email`, `Password`) VALUES ('" . $Name . "', '" . $Email . "', '" . $Pass . "')";
             $result = mysqli_query($Connection, $query);
-            setcookie("cookie", "'" . $Name . "'");
             echo $result;
             if ($result) {
                 header("location:Login.php");
-                echo $_COOKIE['cookie'];
             }
             echo "<h4>Your information is sending to the server successfuly</h4>";
         }
