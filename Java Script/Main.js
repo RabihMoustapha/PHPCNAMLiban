@@ -9,16 +9,16 @@ function teleport() {
     }
     switch (a) {
         case 'home' :
-            window.location.href = "Home.php";
+            window.location.href = "../PHP/Home.php";
             break;
         case 'service' :
-            window.location.href = "Service.php";
+            window.location.href = "../PHP/Service.php";
             break;
         case 'about' :
-            window.location.href = "About.php";
+            window.location.href = "../PHP/About.php";
             break;
         case 'contact' :
-            window.location.href = "Contact.php";
+            window.location.href = "../PHP/Contact.php";
             break;
     }
 }

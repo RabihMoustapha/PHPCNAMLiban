@@ -17,7 +17,6 @@
                 session_start(); // Start a session
                 $_SESSION['isloggedin'] = 1;
                 $_SESSION['Email'] = $Email;
-                #echo $_COOKIE['yourEmail'];
                 header("location:Main.php"); //Go to Home.php
             } else {
                 echo "<h2>This content will not be sent to the browser.</h2>"; // Display an error message
