@@ -93,10 +93,30 @@ header {
     font-size: 1.1em;
     color: #fff;
     font-weight: 500;
-    margin-left: 58px;
+    margin-left: 58.9px;
 }
 
 .navigation .btn-teleport:hover {
+    background: #fff;
+    color: #162938;
+}
+
+.navigation .btn-logout {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 58.9px;
+    margin-top:10px;
+}
+
+.navigation .btn-logout:hover {
     background: #fff;
     color: #162938;
 }
