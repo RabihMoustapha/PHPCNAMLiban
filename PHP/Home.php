@@ -28,9 +28,9 @@ require_once "Connection.php"; //Get connection to Home php from local host
 if (isset($_POST['text-area']) && isset($_POST['Name']) && isset($_POST['Date'])) {
     $query1 = "SELECT * FROM home";
     $file = $_FILES['File']['name'];
-    $result1 = mysqli_query($Connection, $query1);
+    $result1 = mysqli_query($Connection,  $query1);
     $nbr = mysqli_num_rows($result1);
-    echo "<table border='6' cellpadding='20' class='table-comment' align='right'>
+    echo "<table border='6' class='table-comment' cellpadding='20' cellspacing='0.1' class='table-comment' align='right'>
                 <th>
                     Name
                 </th>

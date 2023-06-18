@@ -3,6 +3,7 @@
 
 <head>
     <title>Connection</title>
+    <link rel="icon" type="image/x-icon" href="../cool emoji.png">
 </head>
 <?php
 
