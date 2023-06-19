@@ -9,7 +9,6 @@
         if (isset($_POST['LoginEmail']) && !empty($_POST['LoginEmail']) && isset($_POST['LoginPassword']) && !empty($_POST['LoginPassword'])) { // Verify the set of elements
             $Email = $_POST['LoginEmail'];
             $Password = $_POST['LoginPassword'];
-            #setcookie("yourEmail", $Email);
             $query = "SELECT * FROM `login` WHERE Password = '" . $Password . "' and Email = '" . $Email . "'"; // Add a query in login table
             $result = mysqli_query($Connection, $query); // Run the query
             $nbrow = mysqli_num_rows($result); // Number of rows in $result

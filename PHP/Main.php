@@ -9,7 +9,6 @@ if ($_SESSION['isloggedin'] != 1) {
 
 <head>
     <title>Main</title>
-    <link rel="icon" type="image/x-icon" href="../cool emoji.png">
     <link href="../Css/Main.css" rel="stylesheet" type="text/css">
     <script src="../Java Script/Main.js" type="text/javascript"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -18,7 +17,7 @@ if ($_SESSION['isloggedin'] != 1) {
 <body>
     <header>
         <h2 class="logo">
-            <i class="fa fa-wifi" style="font-size:48px;color:red">
+            <i class="fa fa-usb" style="font-size:48px;color:red">
             </i>
         </h2>
         <nav class="navigation">
@@ -27,6 +26,9 @@ if ($_SESSION['isloggedin'] != 1) {
                     <tr>
                         <td>
                             <button onclick="Form.action = 'View.php'" class="btnlogin-popup">VIEW</button>
+                        </td>
+                        <td>
+                            <button class="btnlogin-popup" onclick="Form.action='../PHP/admin/AdminLogin.php'">ADMIN</button>
                         </td>
                     </tr>
                 </table>
@@ -38,8 +40,6 @@ if ($_SESSION['isloggedin'] != 1) {
                         <button onclick="teleport()" class="btn-teleport">TELEPORT</button>
                     </td>
                     <!--End of teleport-->
-                </tr>
-                <tr>
                     <!--Log-out-->
                     <td>
                         <a href="Log-out.php">
