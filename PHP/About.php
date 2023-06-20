@@ -5,6 +5,7 @@ if ($_SESSION['isloggedin'] != 1) {
     header("Location:Login.php");
 }
 ?>
+<!--End of verify-->
 <!doctype html>
 <html>
 
@@ -39,7 +40,7 @@ if ($_SESSION['isloggedin'] != 1) {
         </table>
         <hr />
         <br/>
-        <!--Ending the about intro-->
+        <!--End of the about intro-->
     </body>
 
 </html>
