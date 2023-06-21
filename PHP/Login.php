@@ -1,19 +1,19 @@
 <!--Login access-->
 <?php
-require_once "Connection.php"; // include the connection
-if (isset($_POST['LoginEmail']) && !empty($_POST['LoginEmail']) && isset($_POST['LoginPassword']) && !empty($_POST['LoginPassword'])) { // Verify the set of elements
+require_once "Connection.php";
+if (isset($_POST['LoginEmail']) && !empty($_POST['LoginEmail']) && isset($_POST['LoginPassword']) && !empty($_POST['LoginPassword'])) {
     $Email = $_POST['LoginEmail'];
     $Password = $_POST['LoginPassword'];
-    $query = "SELECT * FROM `login` WHERE Password = '" . $Password . "' and Email = '" . $Email . "'"; // Add a query in login table
-    $result = mysqli_query($Connection, $query); // Run the query
-    $nbrow = mysqli_num_rows($result); // Number of rows in $result
+    $query = "SELECT * FROM `login` WHERE Password = '" . $Password . "' and Email = '" . $Email . "'";
+    $result = mysqli_query($Connection, $query);
+    $nbrow = mysqli_num_rows($result);
     if ($nbrow > 0) {
-        session_start(); // Start a session
+        session_start();
         $_SESSION['isloggedin'] = 1;
         $_SESSION['Email'] = $Email;
-        header("location:Main.php"); //Go to Home.php
+        header("location:Main.php");
     } else {
-        echo "<h2>This content will not be sent to the browser.</h2>"; // Display an error message
+        echo "<h2>This content will not be sent to the browser.</h2>";
     }
 }
 ?>

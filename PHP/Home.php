@@ -8,23 +8,23 @@ if ($_SESSION['isloggedin'] != 1) {
 <!--End of Login verify-->
 <!--Insert the comment in database-->
 <?php
-require_once "Connection.php"; //include the connection
-if (isset($_POST['text-area']) && isset($_POST['Name']) && isset($_POST['Date']) && isset($_FILES['File'])) { //Verify if the element is seting
+require_once "Connection.php";
+if (isset($_POST['text-area']) && isset($_POST['Name']) && isset($_POST['Date']) && isset($_FILES['File'])) {
     $textarea = $_POST['text-area'];
     $Name = $_POST['Name'];
     $Date = $_POST['Date'];
-    if (!empty($_FILES['File']['name'])) { // if is not empty $_File
+    if (!empty($_FILES['File']['name'])) {
         $file = $_FILES['File']['name'];
-        move_uploaded_file($_FILES['File']['tmp_name'], "../Images/" . $file); //move the uploded file to Images
+        move_uploaded_file($_FILES['File']['tmp_name'], "../Images/" . $file);
     }
-    $query = "INSERT INTO `home`(`Name` , `Comment` , `Date` , `Image`) VALUES ('" . $Name . "' , '" . $textarea . "' , '" . $Date . "' , '" . $file . "')"; //Add a query in home table
-    $result = mysqli_query($Connection, $query); // Run the query
+    $query = "INSERT INTO `home`(`Name` , `Comment` , `Date` , `Image`) VALUES ('" . $Name . "' , '" . $textarea . "' , '" . $Date . "' , '" . $file . "')";
+    $result = mysqli_query($Connection, $query);
 }
 ?>
 <!--End of the inserting data-->
 <!--Display the comment-->
 <?php
-require_once "Connection.php"; //Get connection to Home php from local host
+require_once "Connection.php";
 if (isset($_POST['text-area']) && isset($_POST['Name']) && isset($_POST['Date'])) {
     $query1 = "SELECT * FROM home";
     $file = $_FILES['File']['name'];

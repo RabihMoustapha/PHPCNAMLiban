@@ -7,12 +7,12 @@ $query = "Select * from `admin` where Password='".$pass."' && Email = '".$email.
 $result = mysqli_query($Connection , $query);
 $nb = mysqli_num_rows($result);
 if($nb > 0){
-session_start(); // Start a session
+session_start();
 $_SESSION['logadmin'] = 1;
 $_SESSION['admin_email'] = $email;
-header("Location:Main.php"); //Go to Home.php
+header("Location:Main.php");
 } else {
-echo "<h2>This content will not be sent to the browser.</h2>"; // Display an error message
+echo "<h2>This content will not be sent to the browser.</h2>";
 }
 }
 ?>

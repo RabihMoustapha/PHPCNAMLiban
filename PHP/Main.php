@@ -9,8 +9,8 @@ if ($_SESSION['isloggedin'] != 1) {
 
 <head>
     <title>Main</title>
-    <link href="Main.css" rel="stylesheet" type="text/css">
-    <script src="Main.js" type="text/javascript"></script>
+    <link href="../Css/Main.css" rel="stylesheet" type="text/css">
+    <script src="../Java Script/Main.js" type="text/javascript"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -25,7 +25,7 @@ if ($_SESSION['isloggedin'] != 1) {
                 <table cellspacing="10">
                     <tr>
                         <td>
-                            <button onclick="Form.action = 'View.php'" class="btnlogin-popup">VIEW</button>
+                            <button onclick="Form.action = 'Game.php'" class="btnlogin-popup">GAME</button>
                         </td>
                         <td>
                             <button class="btnlogin-popup" onclick="Form.action='AdminLogin.php'">ADMIN</button>
