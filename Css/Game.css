@@ -122,6 +122,9 @@ header {
 input[type=text] {
     width: 100%;
     height: 100%;
+    font-size:1.2em;
+    font-family:monospace;
+    text-align: right;
 }
 
 .visited-link :link {
