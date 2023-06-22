@@ -26,12 +26,6 @@ header {
     padding: auto;
 }
 
-.logo {
-    font-size: 2em;
-    color: #fff;
-    user-select: none;
-}
-
 .navigation .a1 {
     position: relative;
     font-size: 1.1em;

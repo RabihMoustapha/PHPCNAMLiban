@@ -21,7 +21,7 @@ if (isset($_POST['gamename']) && isset($_POST['downloability']) && isset($_POST[
     $query1 = "Select * from `view`";
     $result1 = mysqli_query($Connection, $query1);;
     $nbr = mysqli_num_rows($result1);
-    echo "<table border='6' class='data-display' cellpadding='20' cellspacing='0.1' align='right'>
+    echo "<table border='6' style='margin-top:12%' cellspacing='0.1' align='right'>
                 <th>
                     Game Name
                 </th>
@@ -41,9 +41,9 @@ if (isset($_POST['gamename']) && isset($_POST['downloability']) && isset($_POST[
         $row = mysqli_fetch_assoc($result1);
         echo "<tr>";
         echo "<td>$row[GameName]</td>";
-        echo "<td><a href='" . $title_ref . "'>$row[TitleReference]</a></td>";
+        echo "<td><a href='" . $title_ref . "' class='visited-link'>$row[TitleReference]</a></td>";
         echo "<td>$row[Downloability]</td>";
-        echo "<td><a href='" . $ref . "'>$row[Reference]</a></td>";
+        echo "<td><a href='" . $ref . "' class='visited-link'>$row[Reference]</a></td>";
         echo "</tr>";
     }
     echo "</table>";
@@ -59,19 +59,16 @@ if (isset($_POST['gamename']) && isset($_POST['downloability']) && isset($_POST[
 
 <body>
     <header>
-        <h2 class="logo">
-            <i class="fa fa-usb" style="font-size:48px;color:red">
-            </i>
-        </h2>
+        <h2></h2>
         <nav class="navigation">
             <form name="Form" method="post">
                 <table cellspacing="10">
                     <tr>
                         <td>
-                            <button onclick="Form.action = 'Game.php'" class="btnlogin-popup">GAME</button>
+                            <button href="Form.action = 'Game.php'" class="btnlogin-popup">GAME</button>
                         </td>
                         <td>
-                            <button class="btnlogin-popup" onclick="Form.action='AdminLogin.php'">ADMIN</button>
+                            <button class="btnlogin-popup" onclick="Form.action='../PHP/admin/AdminLogin.php'">ADMIN</button>
                         </td>
                     </tr>
                 </table>
@@ -93,11 +90,11 @@ if (isset($_POST['gamename']) && isset($_POST['downloability']) && isset($_POST[
         </nav>
     </header>
     <form name="Form" method="post">
-        <table class="insert" border="1" cellspacing="0.1" cellpadding="10">
+        <table style="margin-top:10%" cellspacing="10" cellpadding="20">
             <tr>
                 <th>Game Name:</th>
                 <td>
-                    <input type="text" name="gamename" placeholder="The game name" required>
+                    <input type="text" name="gamename" placeholder="Game name" required>
                 </td>
             </tr>
             <tr>
@@ -109,18 +106,18 @@ if (isset($_POST['gamename']) && isset($_POST['downloability']) && isset($_POST[
             <tr>
                 <th>Downloability:</th>
                 <td>
-                    <input type="text" name="downloability" placeholder="The machine who download this game" required>
+                    <input type="text" name="downloability" placeholder="Required machine" required>
                 </td>
             </tr>
             <tr>
                 <th>Reference:</th>
                 <td>
-                    <input type="text" name="ref" placeholder="Add a site to see the game history" required>
+                    <input type="text" name="ref" placeholder="Game history" required>
                 </td>
             </tr>
             <tr>
                 <td colspan="2">
-                    <button onclick="Form.action = 'Game.php'" class="add">Add your game</button>
+                    <button onclick="Form.action = 'Game.php'" class="Add">Add your game</button>
                 </td>
             </tr>
         </table>

@@ -5,28 +5,20 @@ if ($_SESSION['isloggedin'] != 1) {
     header("Location:Login.php");
 }
 ?>
-<!--End of verify-->
 <!--Insert the data-->
 <?php
-session_start();
 require_once 'Connection.php';
-if ($_SESSION['isloggedin'] != 1) {
-    header("location : Login-Page.php");
-} else {
-    if (isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['comment'])) {
-        $Email = $_POST['email'];
-        $Subject = $_POST['subject'];
-        $Comment = $_POST['comment'];
-        $query = "Insert into contact(`Email`,`Subject`,`Comment`) values ('" . $Email . "','" . $Subject . "','" . $Comment . "')";
-        $result = mysqli_query($Connection, $query);
-        //echo "$result";
-        echo "<h3>Your form has been sended</h3>";
-        echo "<table align='center'><tr><td>";
-        echo "<img src='yes.png'></td></tr></table>";
-    }
+if (isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['comment'])) {
+    $Email = $_POST['email'];
+    $Subject = $_POST['subject'];
+    $Comment = $_POST['comment'];
+    $query = "Insert into contact(`Email`,`Subject`,`Comment`) values ('" . $Email . "','" . $Subject . "','" . $Comment . "')";
+    $result = mysqli_query($Connection, $query);
+    echo "<h3>Your form has been sended</h3>";
+    echo "<table align='center'><tr><td>";
+    echo "<img src='yes.png'></td></tr></table>";
 }
 ?>
-<!--End of inserting-->
 <!doctype html>
 <html>
 
@@ -38,7 +30,6 @@ if ($_SESSION['isloggedin'] != 1) {
 </head>
 
 <body>
-    <!--Starting a header-->
     <header>
         <h2 class="logo">
             <i class="fa fa-sign-in" style="font-size:48px;color:red">
@@ -56,8 +47,6 @@ if ($_SESSION['isloggedin'] != 1) {
             </a>
         </nav>
     </header>
-    <!--End of header-->
-    <!--Starting a form-->
     <form action="Contact.php" method="post">
         <table border="0" class="table" cellpadding="10">
             <tr>
@@ -115,7 +104,6 @@ if ($_SESSION['isloggedin'] != 1) {
             <button type="submit">Contact us</button>
         </div>
     </form>
-    <!--End the form-->
 </body>
 
 </html>
