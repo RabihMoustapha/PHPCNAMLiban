@@ -28,19 +28,16 @@ if ($_SESSION['isloggedin'] != 1) {
                             <button onclick="Form.action = 'Game.php'" class="btnlogin-popup">GAME</button>
                         </td>
                         <td>
-                            <button class="btnlogin-popup" onclick="Form.action='AdminLogin.php'">ADMIN</button>
+                            <button class="btnlogin-popup" onclick="Form.action='../PHP/admin/AdminLogin.php'">ADMIN</button>
                         </td>
                     </tr>
                 </table>
             </form>
             <table>
                 <tr>
-                    <!--Teleport-->
                     <td>
                         <button onclick="teleport()" class="btn-teleport">TELEPORT</button>
                     </td>
-                    <!--End of teleport-->
-                    <!--Log-out-->
                     <td>
                         <a href="Log-out.php">
                             <button class="btn-logout">
@@ -48,7 +45,6 @@ if ($_SESSION['isloggedin'] != 1) {
                             </button>
                         </a>
                     </td>
-                    <!--End of log-out-->
                 </tr>
             </table>
         </nav>

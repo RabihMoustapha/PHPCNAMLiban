@@ -1,5 +1,5 @@
 <?php
-require_once "Connection.php";
+require_once "../Connection.php";
 if(isset($_POST['admin_email']) && isset($_POST['admin_pass'])){
 $email = $_POST['admin_email'];
 $pass = $_POST['admin_pass'];

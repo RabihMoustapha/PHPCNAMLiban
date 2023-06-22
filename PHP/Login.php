@@ -17,7 +17,6 @@ if (isset($_POST['LoginEmail']) && !empty($_POST['LoginEmail']) && isset($_POST[
     }
 }
 ?>
-<!--End of login access-->
 <!doctype html>
 <html>
 

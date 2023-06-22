@@ -5,7 +5,6 @@ if ($_SESSION['isloggedin'] != 1) {
     header("Location:Login.php");
 }
 ?>
-<!--End of Login verify-->
 <!--Insert the comment in database-->
 <?php
 require_once "Connection.php";
@@ -21,7 +20,6 @@ if (isset($_POST['text-area']) && isset($_POST['Name']) && isset($_POST['Date'])
     $result = mysqli_query($Connection, $query);
 }
 ?>
-<!--End of the inserting data-->
 <!--Display the comment-->
 <?php
 require_once "Connection.php";
@@ -63,7 +61,6 @@ if (isset($_POST['text-area']) && isset($_POST['Name']) && isset($_POST['Date'])
     echo "</table>";
 }
 ?>
-<!--End of display-->
 <!doctype html>
 <html>
 

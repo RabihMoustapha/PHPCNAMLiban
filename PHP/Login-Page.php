@@ -14,7 +14,6 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['pass'])) {
     echo "<h4>Your information is sending to the server successfuly</h4>";
 }
 ?>
-<!--End of registration-->
 <!doctype html>
 <html>
 
