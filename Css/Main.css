@@ -119,3 +119,14 @@ header {
     background: #fff;
     color: #162938;
 }
+
+.zoom {
+    display: left;
+    transition: transform .2s;
+    padding: 40pt;
+}
+
+.zoom:hover {
+    transform: scale(1.5);
+    cursor: crosshair;
+}

@@ -49,6 +49,28 @@ if ($_SESSION['isloggedin'] != 1) {
             </table>
         </nav>
     </header>
+    <table align="center">
+        <tr>
+            <td class="zoom" align="center">
+                HELLO USER,
+            </td>
+        </tr>
+        <tr>
+            <td class="zoom" align="center">
+                HOW ARE YOU?
+            </td>
+        </tr>
+        <tr>
+            <td class="zoom" align="center">
+                HERE IN GAME HUB, WE WILL GIVE YOU
+            </td>
+        </tr>
+        <tr>
+            <td class="zoom" align="center">
+                INFORMATION ON ALL THAT CONCERNS <span style="color:yellow">A GAMER</span> AT THE CURRENT TIME..
+            </td>
+        </tr>
+    </table>
 </body>
 
 </html>
