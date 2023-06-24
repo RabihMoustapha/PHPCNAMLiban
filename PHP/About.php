@@ -16,6 +16,23 @@ if ($_SESSION['isloggedin'] != 1) {
 </head>
 
 <body>
+    <header>
+        <h2 class="logo">
+            <i class="fa fa-sign-in" style="font-size:48px;color:red">
+            </i>
+        </h2>
+        <nav class="navigation">
+            <a class="a1" href="Home.php">HOME</a>
+            <a class="not-visited">ABOUT</a>
+            <a class="a1" href="Service.php">SERVICES</a>
+            <a class="a1" href="Contact.php">CONTACT</a>
+            <a href="Log-out.php">
+                <button class="btnlogin-popup">
+                    LOGOUT
+                </button>
+            </a>
+        </nav>
+    </header>
     <table align="center">
         <tr>
             <td class="zoom" align="center">

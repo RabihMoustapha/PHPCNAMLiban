@@ -21,7 +21,7 @@ if (isset($_POST['gamename']) && isset($_POST['downloability']) && isset($_POST[
     $query1 = "Select * from `view`";
     $result1 = mysqli_query($Connection, $query1);;
     $nbr = mysqli_num_rows($result1);
-    echo "<table border='6' style='margin-top:12%' cellspacing='0.1' align='right'>
+    echo "<table border='6' style='margin-top:7%' cellspacing='0.1' align='right'>
                 <th>
                     Game Name
                 </th>

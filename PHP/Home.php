@@ -12,10 +12,8 @@ if (isset($_POST['text-area']) && isset($_POST['Name']) && isset($_POST['Date'])
     $textarea = $_POST['text-area'];
     $Name = $_POST['Name'];
     $Date = $_POST['Date'];
-    if (!empty($_FILES['File']['name'])) {
-        $file = $_FILES['File']['name'];
-        move_uploaded_file($_FILES['File']['tmp_name'], "../Images/" . $file);
-    }
+    $file = $_FILES['File']['name'];
+    move_uploaded_file($_FILES['File']['tmp_name'], "../Images/" . $file);
     $query = "INSERT INTO `home`(`Name` , `Comment` , `Date` , `Image`) VALUES ('" . $Name . "' , '" . $textarea . "' , '" . $Date . "' , '" . $file . "')";
     $result = mysqli_query($Connection, $query);
 }
@@ -55,7 +53,7 @@ if (isset($_POST['text-area']) && isset($_POST['Name']) && isset($_POST['Date'])
         echo "<td><pre>$row[Comment]</pre></td>";
         echo "<td>$row[Date]</td>";
         echo "<td>$Image</td>";
-        echo "<td><a href='../Images/" . $Image . "' download><img class='no-background' src='../Image.png'></a></td>";
+        echo "<td><a href='../Images/" . $Image . "' download><img src='../Image.png'></a></td>";
         echo "</tr>";
     }
     echo "</table>";
@@ -89,43 +87,39 @@ if (isset($_POST['text-area']) && isset($_POST['Name']) && isset($_POST['Date'])
             </a>
         </nav>
     </header>
-    <!--Starting a form-->
-    <div>
-        <form name="Form" method="post" enctype="multipart/form-data">
-            <table class="table" cellspacing="20">
-                <tr>
-                    <th>Name:</th>
-                    <td>
-                        <input required type="text" name="Name" placeholder="E.G write a name" required>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Date:</th>
-                    <td>
-                        <input type="date" name="Date" required>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Comment:</th>
-                    <td>
-                        <textarea cols="30" rows="10" name="text-area" placeholder="E.G write a comment" required></textarea>
-                    </td>
+    <form name="Form" method="post" enctype="multipart/form-data">
+        <table class="table" cellspacing="20">
+            <tr>
+                <th>Name:</th>
+                <td>
+                    <input required type="text" name="Name" placeholder="E.G write a name" required>
+                </td>
+            </tr>
+            <tr>
+                <th>Date:</th>
+                <td>
+                    <input type="date" name="Date" required>
+                </td>
+            </tr>
+            <tr>
+                <th>Comment:</th>
+                <td>
+                    <textarea cols="30" rows="10" name="text-area" placeholder="E.G write a comment" required></textarea>
+                </td>
 
-                </tr>
-                <tr>
-                    <td colspan="3">
-                        <input type="File" name="File" required>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <button onclick="Form.action = 'Home.php'">Insert</button>
-                    </td>
-                </tr>
-            </table>
-        </form>
-    </div>
-    <!--End the form-->
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <input type="File" name="File" required>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button onclick="Form.action = 'Home.php'">Insert</button>
+                </td>
+            </tr>
+        </table>
+    </form>
 </body>
 
 </html>

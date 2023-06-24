@@ -26,7 +26,7 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['pass'])) {
     </script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js">
     </script>
-    <link href="../Css/Login-Page.css" type="text/css" rel="stylesheet">
+    <link href="../Css/Registration.css" type="text/css" rel="stylesheet">
     <script>
         function display() {
             var pass = document.getElementById("pass");
@@ -47,7 +47,7 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['pass'])) {
 
 <body>
     <div class="wrapper">
-        <div class="form-box register">
+        <div class="form-box">
             <h2>
                 REGISTRATION
             </h2>
