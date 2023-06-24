@@ -28,7 +28,7 @@ if ($_SESSION['isloggedin'] != 1) {
                             <button onclick="Form.action = 'Game.php'" class="btnlogin-popup">GAME</button>
                         </td>
                         <td>
-                            <button class="btnlogin-popup" onclick="Form.action='../PHP/admin/AdminLogin.php'">ADMIN</button>
+                            <button class="btnlogin-popup" onclick="Form.action='../PHP/admin/AdminRegistration.php'">ADMIN</button>
                         </td>
                     </tr>
                 </table>
@@ -49,7 +49,7 @@ if ($_SESSION['isloggedin'] != 1) {
             </table>
         </nav>
     </header>
-    <table align="center">
+    <table class="intro" cellspacing="20" align="center">
         <tr>
             <td align="center">
                 HELLO USER,
