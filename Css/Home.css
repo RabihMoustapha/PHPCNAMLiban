@@ -101,6 +101,11 @@ button {
     height: 100%;
 }
 
+button:hover{
+    background:white;
+    color:black;
+}
+
 .not-visited {
     background: white;
     cursor: progress;
