@@ -34,7 +34,7 @@
         <h2>
             LOGIN
         </h2>
-        <form action="LoginAdminAccess.php" method="post">
+        <form action="AdminLoginAccess.php" method="post">
             <div class="input-box">
                 <span class="icon">
                     <ion-icon name="mail-outline"></ion-icon>
