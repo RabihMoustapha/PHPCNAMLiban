@@ -65,10 +65,10 @@ if (isset($_POST['gamename']) && isset($_POST['downloability']) && isset($_POST[
                 <table cellspacing="10">
                     <tr>
                         <td>
-                            <button href="Form.action = 'Game.php'" class="btnlogin-popup">GAME</button>
+                            <button href="Form.action = 'Main.php'" class="btnlogin-popup">MAIN</button>
                         </td>
                         <td>
-                            <button class="btnlogin-popup" onclick="Form.action='../PHP/admin/AdminLogin.php'">ADMIN</button>
+                            <button class="btnlogin-popup" onclick="Form.action=''">Op text</button>
                         </td>
                     </tr>
                 </table>
