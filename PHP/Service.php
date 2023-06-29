@@ -35,15 +35,17 @@
 			<h2 class="logo">
 			</h2>
 			<nav class="navigation">
-				<a class="a1" href="Home.php">HOME</a>
-				<a class="not-visited">SERVICES</a>
-				<a class="a1" href="Contact.php">CONTACT</a>
-				<a href="Log-out.php">
-					<button class="btnlogin-popup">
-						LOGOUT
-					</button>
-				</a>
-			</nav>
+            <a class="a1" href="Contact.php">CONTACT</a>
+            <a class="a1" href="Home.php">HOME</a>
+            <a class="a1" href="Main.php">MAIN</a>
+            <a class="not-visited">SERVICES</a>
+            
+            <a href="Log-out.php">
+                <button class="btnlogin-popup">
+                    LOGOUT
+                </button>
+            </a>
+        </nav>
 		</header>
 		<section class="service">
 			<div class="content-box">

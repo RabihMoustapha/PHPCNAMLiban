@@ -36,9 +36,11 @@ if (isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['comment'
             </i>
         </h2>
         <nav class="navigation">
-            <a class="a1" href="Home.php">HOME</a>
-            <a class="a1" href="Service.php">SERVICES</a>
             <a class="not-visited">CONTACT</a>
+            <a class="a1" href="Home.php">HOME</a>
+            <a class="a1" href="Main.php">MAIN</a>
+            <a class="a1" href="Service.php">SERVICES</a>
+            
             <a href="Log-out.php">
                 <button class="btnlogin-popup">
                     LOGOUT

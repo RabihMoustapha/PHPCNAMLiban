@@ -76,9 +76,11 @@ if (isset($_POST['text-area']) && isset($_POST['Name']) && isset($_POST['Date'])
             </i>
         </h2>
         <nav class="navigation">
-            <a class="not-visited">HOME</a>
-            <a class="a1" href="Service.php">SERVICES</a>
             <a class="a1" href="Contact.php">CONTACT</a>
+            <a class="not-visited">HOME</a>
+            <a class="a1" href="Main.php">MAIN</a>
+            <a class="a1" href="Service.php">SERVICES</a>
+            
             <a href="Log-out.php">
                 <button class="btnlogin-popup">
                     LOGOUT
