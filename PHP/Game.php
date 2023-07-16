@@ -8,47 +8,19 @@ if ($_SESSION['isloggedin'] != 1) {
 <!--Insert the data-->
 <?php
 require_once "Connection.php";
-if (isset($_POST['gamename']) && isset($_POST['downloability']) && isset($_POST['ref']) && isset($_POST['title_ref'])) {
-    $game = $_POST['gamename'];
+if (isset($_FILES['gamename']) && isset($_POST['downloability']) && isset($_POST['ref']) && isset($_POST['title_ref'])) {
+    $game = $_FILES['gamename']['name'];
+    move_uploaded_file($_FILES['gamename']['tmp_name'], "../Images/" . $game);
     $down = $_POST['downloability'];
     $title_ref = $_POST['title_ref'];
     $ref = $_POST['ref'];
     $query = "INSERT into view(GameName ,TitleReference, Downloability , Reference) VALUES ('" . $game . "','" . $title_ref . "','" . $down . "','" . $ref . "')";
     $result = mysqli_query($Connection, $query);
-?>
-    <!--Display the data-->
-    <?php
-    $query1 = "Select * from `view`";
-    $result1 = mysqli_query($Connection, $query1);;
-    $nbr = mysqli_num_rows($result1);
-    echo "<table border='6' style='margin-top:7%' cellspacing='0.1' align='right'>
-                <th>
-                    Game Name
-                </th>
-                <th>
-                    Title Reference
-                </th>
-                <th>
-                    Downloability
-                </th>
-                <th>
-                    Reference
-				</th>
-            </tr>";
-    ?>
-<?php
-    for ($i = 0; $i < $nbr; $i++) {
-        $row = mysqli_fetch_assoc($result1);
-        echo "<tr>";
-        echo "<td>$row[GameName]</td>";
-        echo "<td><a href='" . $title_ref . "' class='visited-link'>$row[TitleReference]</a></td>";
-        echo "<td>$row[Downloability]</td>";
-        echo "<td><a href='" . $ref . "' class='visited-link'>$row[Reference]</a></td>";
-        echo "</tr>";
-    }
-    echo "</table>";
+    if ($result) header("location: GameView.php");
 }
 ?>
+<!DOCTYPE html>
+<html>
 
 <head>
     <title>Game Spot</title>
@@ -61,18 +33,24 @@ if (isset($_POST['gamename']) && isset($_POST['downloability']) && isset($_POST[
     <header>
         <h2></h2>
         <nav class="navigation">
-            <form name="Form" method="post">
-                <table cellspacing="10">
-                    <tr>
-                        <td>
-                            <button href="Form.action = 'Main.php'" class="btnlogin-popup">MAIN</button>
-                        </td>
-                        <td>
-                            <button class="btnlogin-popup" onclick="Form.action=''">Op text</button>
-                        </td>
-                    </tr>
-                </table>
-            </form>
+            <table cellspacing="10">
+                <tr>
+                    <td>
+                        <a href="Main.php">
+                            <button class="btnlogin-popup">
+                                MAIN
+                            </button>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="GameView.php">
+                            <button class="btnlogin-popup">
+                                GAME VIEW
+                            </button>
+                        </a>
+                    </td>
+                </tr>
+            </table>
             <table>
                 <tr>
                     <td>
@@ -89,16 +67,16 @@ if (isset($_POST['gamename']) && isset($_POST['downloability']) && isset($_POST[
             </table>
         </nav>
     </header>
-    <form name="Form" method="post">
+    <form name="Form" method="post" enctype="multipart/form-data">
         <table style="margin-top:10%" cellspacing="10" cellpadding="20">
             <tr>
                 <th>Game Name:</th>
                 <td>
-                    <input type="text" name="gamename" placeholder="Game name" required>
+                    <input type="File" name="gamename" required>
                 </td>
             </tr>
             <tr>
-                <th>Title Reference:</th>
+                <th>Link :</th>
                 <td>
                     <input type="text" name="title_ref" placeholder="Video about the game" required>
                 </td>
@@ -117,7 +95,7 @@ if (isset($_POST['gamename']) && isset($_POST['downloability']) && isset($_POST[
             </tr>
             <tr>
                 <td colspan="2">
-                    <button onclick="Form.action = 'Game.php'" class="Add">Add your game</button>
+                    <button onclick="Form.action = 'Game.php'" class="form-button">Add your game</button>
                 </td>
             </tr>
         </table>

@@ -13,21 +13,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="../Css/Service.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<script>
-			function Accept() {
-				var p = prompt("Yes or No?");
-				p = p.toUpperCase();
-				if (p === "YES") {
-					alert("Ok accept");
-					window.location.href = "Contact.php";
-				} else {
-					if (p === "NO")
-						alert("Thanks for viewing my website");
-					else
-						alert("Enter one of thiese two values");
-				}
-			}
-		</script>
+		<script src="../Java Script/Service.js" type="text/javascript"></script>
 	</head>
 
 	<body>
@@ -35,17 +21,17 @@
 			<h2 class="logo">
 			</h2>
 			<nav class="navigation">
-            <a class="a1" href="Contact.php">CONTACT</a>
-            <a class="a1" href="Home.php">HOME</a>
-            <a class="a1" href="Main.php">MAIN</a>
-            <a class="not-visited">SERVICES</a>
-            
-            <a href="Log-out.php">
-                <button class="btnlogin-popup">
-                    LOGOUT
-                </button>
-            </a>
-        </nav>
+				<a class="a1" href="Contact.php">CONTACT</a>
+				<a class="a1" href="Home.php">HOME</a>
+				<a class="a1" href="Main.php">MAIN</a>
+				<a class="not-visited">SERVICES</a>
+				<a class="a1" href="View.php">VIEW</a>
+				<a href="Log-out.php">
+					<button class="btnlogin-popup">
+						LOGOUT
+					</button>
+				</a>
+			</nav>
 		</header>
 		<section class="service">
 			<div class="content-box">

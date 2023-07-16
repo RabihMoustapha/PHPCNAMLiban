@@ -8,58 +8,19 @@ if ($_SESSION['isloggedin'] != 1) {
 <!--Insert the comment in database-->
 <?php
 require_once "Connection.php";
-if (isset($_POST['text-area']) && isset($_POST['Name']) && isset($_POST['Date']) && isset($_FILES['File'])) {
+if (isset($_POST['text-area']) && isset($_POST['Name']) && isset($_POST['Date']) && isset($_FILES['File']) && isset($_POST['Image_link'])) {
     $textarea = $_POST['text-area'];
     $Name = $_POST['Name'];
     $Date = $_POST['Date'];
     $file = $_FILES['File']['name'];
+    $ImageLink = $_POST['Image_link'];
     move_uploaded_file($_FILES['File']['tmp_name'], "../Images/" . $file);
-    $query = "INSERT INTO `home`(`Name` , `Comment` , `Date` , `Image`) VALUES ('" . $Name . "' , '" . $textarea . "' , '" . $Date . "' , '" . $file . "')";
+    $query = "INSERT INTO `home`(`Name` , `Comment` , `Date` , `Image`, `ImageLink`) VALUES ('" . $Name . "' , '" . $textarea . "' , '" . $Date . "' , '" . $file . "', '" . $ImageLink . "')";
     $result = mysqli_query($Connection, $query);
+    if ($result) header("location: View.php");
 }
 ?>
-<!--Display the comment-->
-<?php
-require_once "Connection.php";
-if (isset($_POST['text-area']) && isset($_POST['Name']) && isset($_POST['Date'])) {
-    $query1 = "SELECT * FROM home";
-    $file = $_FILES['File']['name'];
-    $result1 = mysqli_query($Connection,  $query1);
-    $nbr = mysqli_num_rows($result1);
-    echo "<table border='6' class='table-comment' cellpadding='20' cellspacing='0.1' class='table-comment' align='right'>
-                <th>
-                    Name
-                </th>
-                <th>
-                    Comment
-                </th>
-                <th>
-                    Date
-                </th>
-                <th>
-                    Image
-                </th>
-                <th>
-                    Download the image
-                </th>
-            </tr>";
-?>
-<?php
-    for ($i = 0; $i < $nbr; $i++) {
-        $row = mysqli_fetch_assoc($result1);
-        $Image = $row['Image'];
-        echo "<tr>";
-        echo "<td>$row[Name]</td>";
-        echo "<td><pre>$row[Comment]</pre></td>";
-        echo "<td>$row[Date]</td>";
-        echo "<td>$Image</td>";
-        echo "<td><a href='../Images/" . $Image . "' download><img src='../Image.png'></a></td>";
-        echo "</tr>";
-    }
-    echo "</table>";
-}
-?>
-<!doctype html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -77,10 +38,10 @@ if (isset($_POST['text-area']) && isset($_POST['Name']) && isset($_POST['Date'])
         </h2>
         <nav class="navigation">
             <a class="a1" href="Contact.php">CONTACT</a>
-            <a class="not-visited">HOME</a>
+            <a class="not-visited" readonly>HOME</a>
             <a class="a1" href="Main.php">MAIN</a>
             <a class="a1" href="Service.php">SERVICES</a>
-            
+            <a class="a1" href="View.php">VIEW</a>
             <a href="Log-out.php">
                 <button class="btnlogin-popup">
                     LOGOUT
@@ -110,9 +71,15 @@ if (isset($_POST['text-area']) && isset($_POST['Name']) && isset($_POST['Date'])
 
             </tr>
             <tr>
+                <th>Image:</th>
                 <td colspan="3">
                     <input type="File" name="File" required>
                 </td>
+            </tr>
+            <tr>
+                <th>Image Link:</th>
+                <td>
+                    <input type="text" name="Image_link" required>
             </tr>
             <tr>
                 <td colspan="2">

@@ -22,6 +22,7 @@ header {
     width: 100%;
     display: flex;
     justify-content: space-between;
+
     z-index: 99;
     padding: auto;
 }
@@ -29,7 +30,7 @@ header {
 .navigation .a1 {
     position: relative;
     font-size: 1.1em;
-    color: rgb(255, 255, 255);
+    color: #fff;
     text-decoration: none;
     font-weight: 500;
     margin-left: 40px;
@@ -42,7 +43,7 @@ header {
     position: absolute;
     width: 100%;
     height: 3px;
-    background: rgb(255, 255, 255);
+    background: #fff;
     border-radius: 5px;
     bottom: -6px;
     transform: scaleX(0);
@@ -55,86 +56,57 @@ header {
     transform: scaleX(1);
 }
 
-
 .navigation .btnlogin-popup {
     width: 130px;
     height: 50px;
     background: transparent;
-    border: 2px solid rgb(255, 255, 255);
+    border: 2px solid #fff;
     outline: none;
     border-radius: 6px;
     cursor: pointer;
     font-size: 1.1em;
-    color: rgb(255, 255, 255);
+    color: #fff;
     font-weight: 500;
     margin-left: 50px;
 }
 
 .navigation .btnlogin-popup:hover {
-    background: white;
+    background: #fff;
     color: #162938;
 }
 
-.navigation .btn-teleport {
-    width: 130px;
-    height: 50px;
-    background: transparent;
-    border: 2px solid rgb(255, 255, 255);
-    outline: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1.1em;
-    color: rgb(255, 255, 255);
-    font-weight: 500;
-    margin-left: 58.9px;
-}
-
-.navigation .btn-teleport:hover {
-    background: rgb(255, 255, 255);
-    color: #162938;
-}
-
-.navigation .btn-logout {
-    width: 130px;
-    height: 50px;
-    background: transparent;
-    border: 2px solid rgb(255, 255, 255);
-    outline: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1.1em;
-    color: rgb(255, 255, 255);
-    font-weight: 500;
-    margin-left: 57px;
-}
-
-.navigation .btn-logout:hover {
-    background: rgb(255, 255, 255);
-    color: #162938;
-}
-
-.form-button {
+.not-visited {
+    color: lime;
+    font-weight: bold;
+    cursor: progress;
     width: 100%;
-    height: 100%;
-    font-size: 1.5em;
-    color: white;
-    background: transparent;
-    border: 1px solid white;
 }
 
-.form-button:hover {
-    width: 100%;
-    height: 100%;
-    font-size: 1.5em;
-    color: black;
-    background: white;
-    border: 1px solid white;
+.table-comment {
+    margin-top: 5%;
+    margin-left: 15%;
+    border-color: blue;
 }
 
 input[type=text] {
     width: 100%;
     height: 100%;
-    font-size: 1.2em;
-    font-family: monospace;
-    text-align: right;
+    font-size: 100%;
+}
+
+input[type=date] {
+    width: 100%;
+    font-size: 100%;
+    height: 100%;
+}
+
+textarea {
+    width: 100%;
+    height: 100%;
+    font-size: 100%;
+}
+
+img.user {
+    width: 100px;
+    height: 100px;
 }

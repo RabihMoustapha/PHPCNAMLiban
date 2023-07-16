@@ -126,10 +126,10 @@ input {
 }
 
 .not-visited{
-    background:white;
-    cursor:progress;
-    color:red;
-    width:100%;
+	color: lime;
+	font-weight: bold;
+    cursor: progress;
+    width: 100%;
 }
 
 .not-visited:hover{

@@ -40,7 +40,7 @@ if (isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['comment'
             <a class="a1" href="Home.php">HOME</a>
             <a class="a1" href="Main.php">MAIN</a>
             <a class="a1" href="Service.php">SERVICES</a>
-            
+            <a class="a1" href="View.php">VIEW</a>
             <a href="Log-out.php">
                 <button class="btnlogin-popup">
                     LOGOUT

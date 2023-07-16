@@ -2,6 +2,9 @@
 session_start();
 if ($_SESSION['isloggedin'] != 1) {
     header("Location:Login.php");
+} else {
+    $email = $_SESSION['Email'];
+    echo "<h1 class='welcome'>Welcome $email</h1>";
 }
 ?>
 <!doctype html>

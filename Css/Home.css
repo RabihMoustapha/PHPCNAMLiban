@@ -87,11 +87,6 @@ header {
     margin-left: 2%;
 }
 
-.table-comment {
-    margin-top: 10%;
-    margin-right: 10%;
-}
-
 button {
     color: white;
     background: black;
@@ -106,15 +101,11 @@ button:hover{
     color:black;
 }
 
-.not-visited {
-    background: white;
+.not-visited{
+	color: lime;
+	font-weight: bold;
     cursor: progress;
-    color: red;
-}
-
-.table-comment {
-    border: 1pt solid white;
-    width: 66.9px;
+    width: 100%;
 }
 
 input[type=text] {
