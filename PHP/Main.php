@@ -19,10 +19,7 @@ if ($_SESSION['isloggedin'] != 1) {
 
 <body>
     <header>
-        <h2 class="logo">
-            <i class="fa fa-usb" style="font-size:48px;color:red">
-            </i>
-        </h2>
+        <h2 class="logo"></h2>
         <nav class="navigation">
             <form name="Form" method="post">
                 <table cellspacing="10">
@@ -31,7 +28,7 @@ if ($_SESSION['isloggedin'] != 1) {
                             <button onclick="Form.action = 'Game.php'" class="btnlogin-popup">GAME</button>
                         </td>
                         <td>
-                            <button class="btnlogin-popup" onclick="Form.action='../PHP/admin/AdminRegistration.php'">ADMIN</button>
+                            <button class="btnlogin-popup" onclick="Form.action='Sticker.php'">STICKER</button>
                         </td>
                     </tr>
                 </table>
