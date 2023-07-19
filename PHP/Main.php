@@ -1,10 +1,14 @@
 <?php
+require_once "Connection.php";
 session_start();
 if ($_SESSION['isloggedin'] != 1) {
     header("Location:Login.php");
 } else {
     $email = $_SESSION['Email'];
-    echo "<h1 class='welcome'>Welcome $email</h1>";
+    $query="Select * from login where Email='".$email."'";
+    $result=mysqli_query($Connection, $query);
+    $row=mysqli_fetch_assoc($result);
+    echo "<h1 class='welcome'>Welcome $row[Name]</h1>";
 }
 ?>
 <!doctype html>
@@ -26,9 +30,6 @@ if ($_SESSION['isloggedin'] != 1) {
                     <tr>
                         <td>
                             <button onclick="Form.action = 'Game.php'" class="btnlogin-popup">GAME</button>
-                        </td>
-                        <td>
-                            <button class="btnlogin-popup" onclick="Form.action='Sticker.php'">STICKER</button>
                         </td>
                     </tr>
                 </table>
