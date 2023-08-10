@@ -49,7 +49,7 @@
 					</div>
 					<div class="row service">
 						<div class="col-md-3 text-center">
-							<div class="icon" onclick="Accept()">
+							<div class="icon" onclick="accept()">
 								<i class="fa fa-user" style="font-size:2.5em;margin-left:10px;margin-bottom:5px"></i>
 							</div>
 							<h3>Web <span>Member</span></h3>

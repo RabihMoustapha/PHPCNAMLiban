@@ -1,4 +1,4 @@
-function Accept() {
+function accept() {
 	var p = prompt("Yes or No?");
 	p = p.toUpperCase();
 	if (p === "YES") {
