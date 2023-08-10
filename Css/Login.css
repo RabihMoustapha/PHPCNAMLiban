@@ -31,14 +31,14 @@ header {
 
 .logo {
     font-size: 2em;
-    color: #fff;
+    color: rgb(255, 255, 255);
     user-select: none;
 }
 
 .navigation a {
     position: relative;
     font-size: 1.1em;
-    color: #fff;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     font-weight: 500;
     margin-left: 40px;
@@ -51,7 +51,7 @@ header {
     position: absolute;
     width: 100%;
     height: 3px;
-    background: #fff;
+    background: rgb(255, 255, 255);
     border-radius: 5px;
     bottom: -6px;
     transform: scalex(0);
@@ -68,18 +68,18 @@ header {
     width: 130px;
     height: 50px;
     background: transparent;
-    border: 2px solid #fff;
+    border: 2px solid rgb(255, 255, 255);
     outline: none;
     border-radius: 6px;
     cursor: pointer;
     font-size: 1.1em;
-    color: #fff;
+    color: rgb(255, 255, 255);
     font-weight: 500;
     margin-left: 40px;
 }
 
 .navigation .btnlogin-popup:hover {
-    background: #fff;
+    background: rgb(255, 255, 255);
     color: #162938;
 }
 
@@ -252,8 +252,8 @@ input:checked {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background: blue;
-    color: white;
+    background: rgb(0, 0, 255);
+    color: rgb(255, 255, 255);
 }
 
 .c1 {

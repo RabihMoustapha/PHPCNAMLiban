@@ -117,19 +117,19 @@ header {
     width: 130px;
     height: 50px;
     background: transparent;
-    border: 2px solid #fff;
+    border: 2px solid rgb(255, 255, 255);
     outline: none;
     border-radius: 6px;
     cursor: pointer;
     font-size: 1.1em;
-    color: #fff;
+    color: rgb(255, 255, 255);
     font-weight: 500;
     margin-left: 60px;
     margin-top: 7px;
 }
 
 .navigation .btn-avatar:hover {
-    background: #fff;
+    background: rgb(255, 255, 255);
     color: #162938;
 }
 
@@ -137,19 +137,19 @@ header {
     width: 130px;
     height: 50px;
     background: transparent;
-    border: 2px solid #fff;
+    border: 2px solid rgb(255, 255, 255);
     outline: none;
     border-radius: 6px;
     cursor: pointer;
     font-size: 1.1em;
-    color: #fff;
+    color: rgb(255, 255, 255);
     font-weight: 500;
     margin-left: 57.5px;
     margin-top: 7px;
 }
 
 .navigation .btn-register:hover {
-    background: #fff;
+    background: rgb(255, 255, 255);
     color: #162938;
 }
 
