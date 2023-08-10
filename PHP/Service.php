@@ -4,7 +4,6 @@
 		header("Location:Login.php");
 	}
 	?>
-	<!DOCTYPE html>
 	<html>
 
 	<head>

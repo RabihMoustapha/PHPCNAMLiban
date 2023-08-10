@@ -14,7 +14,6 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['pass'])) {
     echo "<h4>Your information is sending to the server successfuly</h4>";
 }
 ?>
-<!doctype html>
 <html>
 
 <head>
@@ -27,22 +26,7 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['pass'])) {
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js">
     </script>
     <link href="../Css/Registration.css" type="text/css" rel="stylesheet">
-    <script>
-        function display() {
-            var pass = document.getElementById("pass");
-            var open = document.getElementById("open");
-            var close = document.getElementById("close");
-            if (pass.type == "password") {
-                pass.type = "text";
-                open.style.display = "block";
-                close.style.display = "none";
-            } else {
-                pass.type = "password";
-                open.style.display = "none";
-                close.style.display = "block";
-            }
-        }
-    </script>
+    <script type="text/javascript" src="../Java Script/Registration.js"></script>
 </head>
 
 <body>

@@ -5,33 +5,37 @@ $query1 = "Select * from `view`";
 $result1 = mysqli_query($Connection, $query1);;
 $nbr = mysqli_num_rows($result1);
 ?>
-<table border="5" style="margin-top:7%" cellspacing="0.1" align="center">
-    <th>
-        Picture
-    </th>
-    <th>
-        Link
-    </th>
-    <th>
-        Downloability
-    </th>
-    <th>
-        Reference
-    </th>
+<table class="datatable" cellspacing="30" align="center">
+    <tr>
+        <th>
+            Date
+        </th>
+        <th>
+            Picture
+        </th>
+        <th>
+            Video Link
+        </th>
+        <th>
+            Downloability
+        </th>
+        <th>
+            Link about game history
+        </th>
     </tr>
     <?php
     for ($i = 0; $i < $nbr; $i++) {
         $row = mysqli_fetch_assoc($result1);
         echo "<tr>";
-        echo "<td><img src='../Images/$row[GameName]' class='user'></td>";
-        echo "<td><a href='$row[TitleReference]' class='visited-link'>$row[TitleReference]</a></td>";
+        echo "<td>$row[Date]</td>";
+        echo "<td><img src='../Images/$row[GameImg]' class='user'></td>";
+        echo "<td><a href='$row[TitleReference]' class='linkrow'>$row[TitleReference]</a></td>";
         echo "<td>$row[Downloability]</td>";
-        echo "<td><a href='$row[Reference]' class='visited-link'>$row[Reference]</a></td>";
+        echo "<td><a href='$row[Reference]' class='linkrow'>$row[Reference]</a></td>";
         echo "</tr>";
     }
     echo "</table>";
     ?>
-    <!DOCTYPE html>
     <html>
 
     <head>
@@ -39,6 +43,7 @@ $nbr = mysqli_num_rows($result1);
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Game View</title>
         <link href="../Css/GameView.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="../Java Script/GameView.js"></script>
     </head>
 
     <body>
@@ -73,6 +78,20 @@ $nbr = mysqli_num_rows($result1);
                                 <button class="btn-logout">
                                     LOGOUT
                                 </button>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td>
+                            <a href="Avatar.php">
+                                <button class="btn-avatar">AVATAR</button>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="Registration.php">
+                                <button class="btn-register">REGISTER</button>
                             </a>
                         </td>
                     </tr>

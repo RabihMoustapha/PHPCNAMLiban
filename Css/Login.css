@@ -172,7 +172,7 @@ header {
     border: none;
     outline: none;
     font-size: 1em;
-    color: white;
+    color: rgb(255, 255, 255);
     font-weight: 600;
     padding: 0 35px 0 5px;
 

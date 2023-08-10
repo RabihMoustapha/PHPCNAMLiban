@@ -13,11 +13,10 @@ if (isset($_POST['LoginEmail']) && !empty($_POST['LoginEmail']) && isset($_POST[
         $_SESSION['Email'] = $Email;
         header("location:Main.php");
     } else {
-        echo "<h2>This content will not be sent to the browser.</h2>";
+        header("Location: Registration.php");
     }
 }
 ?>
-<!doctype html>
 <html>
 
 <head>
@@ -30,22 +29,7 @@ if (isset($_POST['LoginEmail']) && !empty($_POST['LoginEmail']) && isset($_POST[
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js">
     </script>
     <link href="../Css/Login.css" rel="stylesheet" type="text/css">
-    <script>
-        function display() {
-            var pass = document.getElementById("pass");
-            var open = document.getElementById("open");
-            var close = document.getElementById("close");
-            if (pass.type == "password") {
-                pass.type = "text";
-                open.style.display = "block";
-                close.style.display = "none";
-            } else {
-                pass.type = "password";
-                open.style.display = "none";
-                close.style.display = "block";
-            }
-        }
-    </script>
+    <script type="text/javascript" src="../Java Script/Login.js"></script>
 </head>
 
 <body>

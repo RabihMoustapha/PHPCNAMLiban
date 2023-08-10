@@ -112,11 +112,50 @@
 		font-size: 1.1em;
 		color: #fff;
 		font-weight: 500;
-		margin-left: 20px;
-		margin-bottom: 115px;
+		margin-left: 58px;
 	}
 
 	.navigation .btn-logout:hover {
+		background: #fff;
+		color: #162938;
+	}
+
+	.navigation .btn-avatar {
+		width: 130px;
+		height: 50px;
+		background: transparent;
+		border: 2px solid #fff;
+		outline: none;
+		border-radius: 6px;
+		cursor: pointer;
+		font-size: 1.1em;
+		color: #fff;
+		font-weight: 500;
+		margin-left: 60px;
+		margin-top: 7px;
+	}
+
+	.navigation .btn-avatar:hover {
+		background: #fff;
+		color: #162938;
+	}
+
+	.navigation .btn-register {
+		width: 130px;
+		height: 50px;
+		background: transparent;
+		border: 2px solid #fff;
+		outline: none;
+		border-radius: 6px;
+		cursor: pointer;
+		font-size: 1.1em;
+		color: #fff;
+		font-weight: 500;
+		margin-left: 57.5px;
+		margin-top: 7px;
+	}
+
+	.navigation .btn-register:hover {
 		background: #fff;
 		color: #162938;
 	}
@@ -131,5 +170,7 @@
 	.welcome {
 		font-size: 30px;
 		font-family: monospace;
-		color: cyan;
+		color: rgb(0, 255, 255);
+		font-weight: bold;
+		font-style: oblique;
 	}

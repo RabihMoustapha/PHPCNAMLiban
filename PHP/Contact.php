@@ -15,7 +15,7 @@ if (isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['comment'
     $query = "Insert into contact(`Email`,`Subject`,`Comment`) values ('" . $Email . "','" . $Subject . "','" . $Comment . "')";
     $result = mysqli_query($Connection, $query);
     echo "<h3>Your form has been sended</h3>";
-    echo "<table align='center'><tr><td>";
+    echo "<table align='center'><tr class='input-box'><td>";
     echo "<img src='yes.png'></td></tr></table>";
 }
 ?>
@@ -49,8 +49,8 @@ if (isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['comment'
         </nav>
     </header>
     <form action="Contact.php" method="post">
-        <table border="0" class="table" cellpadding="10">
-            <tr>
+        <table border="0" class="contacttable" cellpadding="10">
+            <tr class="input-box">
                 <td class="first">
                     <b>
                         <label>First name</label>
@@ -60,7 +60,7 @@ if (isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['comment'
                     <input type="text" name="user" autocomplete="name" placeholder="First name">
                 </td>
             </tr>
-            <tr>
+            <tr class="input-box">
                 <td>
                     <b>
                         <label>Last name</label>
@@ -70,7 +70,7 @@ if (isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['comment'
                     <input type="text" name="Luser" autocomplete="name" placeholder="Last name">
                 </td>
             </tr>
-            <tr>
+            <tr class="input-box">
                 <td>
                     <b>
                         <label>Email</label>
@@ -80,7 +80,7 @@ if (isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['comment'
                     <input type="email" required name="email" autocomplete="email" placeholder="Email address">
                 </td>
             </tr>
-            <tr>
+            <tr class="input-box">
                 <td>
                     <b>
                         <label>Phone number</label>
@@ -90,7 +90,7 @@ if (isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['comment'
                     <input type="text" name="phone" required autocomplete="tel" placeholder="xx-xxxxxx">
                 </td>
             </tr>
-            <tr>
+            <tr class="input-box">
                 <td>
                     <b>
                         <label>Subject</label>
@@ -102,7 +102,7 @@ if (isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['comment'
             </tr>
         </table>
         <div class="footer">
-            <button type="submit">Contact us</button>
+            <button class="form-button">Contact us</button>
         </div>
     </form>
 </body>

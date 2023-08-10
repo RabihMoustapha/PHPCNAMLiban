@@ -5,13 +5,12 @@ if ($_SESSION['isloggedin'] != 1) {
     header("Location:Login.php");
 } else {
     $email = $_SESSION['Email'];
-    $query="Select * from login where Email='".$email."'";
-    $result=mysqli_query($Connection, $query);
-    $row=mysqli_fetch_assoc($result);
+    $query = "Select * from login where Email='" . $email . "'";
+    $result = mysqli_query($Connection, $query);
+    $row = mysqli_fetch_assoc($result);
     echo "<h1 class='welcome'>Welcome $row[Name]</h1>";
 }
 ?>
-<!doctype html>
 <html>
 
 <head>
@@ -31,6 +30,9 @@ if ($_SESSION['isloggedin'] != 1) {
                         <td>
                             <button onclick="Form.action = 'Game.php'" class="btnlogin-popup">GAME</button>
                         </td>
+                        <td>
+                            <button onclick="Form.action='Add Emoji.php'" class="btnlogin-popup">SOME EMOJI</button>
+                        </td>
                     </tr>
                 </table>
             </form>
@@ -44,6 +46,20 @@ if ($_SESSION['isloggedin'] != 1) {
                             <button class="btn-logout">
                                 LOGOUT
                             </button>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td>
+                        <a href="Avatar.php">
+                            <button class="btn-avatar">AVATAR</button>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="Registration.php">
+                            <button class="btn-register">REGISTER</button>
                         </a>
                     </td>
                 </tr>

@@ -1,4 +1,9 @@
-<link href="../Css/View.css" rel="stylesheet" type="text/css">
+<html>
+
+<head>
+    <title>View</title>
+    <link href="../Css/View.css" rel="stylesheet" type="text/css">
+</head>
 
 <body>
     <header>
@@ -23,7 +28,7 @@
     $result1 = mysqli_query($Connection,  $query1);
     $nbr = mysqli_num_rows($result1);
     ?>
-    <table border="5" cellspacing="0.1" class="table-comment" align="center">
+    <table cellspacing="30" class="datatable" align="center">
         <th>
             Name
         </th>
@@ -45,8 +50,8 @@
             $row = mysqli_fetch_assoc($result1);
             $Image = $row['Image'];
             echo "<tr>";
-            echo "<td>$row[Name]</td>";
-            echo "<td><pre>$row[Comment]</pre></td>";
+            echo "<td class='name-row'>$row[Name]</td>";
+            echo "<td class='comment-row'><pre>$row[Comment]</pre></td>";
             echo "<td>$row[Date]</td>";
             echo "<td><a href='$row[ImageLink]'><img class='user' src='../Images/$Image'></a></td>";
             echo "<td><a href='../Images/" . $Image . "' download><img src='../Image.png'></a></td>";
@@ -55,3 +60,5 @@
         echo "</table>";
         ?>
 </body>
+
+</html>

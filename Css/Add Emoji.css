@@ -6,12 +6,11 @@
 }
 
 body {
-
     min-height: 100vh;
     background-size: cover;
     background-position: center;
     background: url("../desktop-wallpaper.jpg") no-repeat;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 header {
@@ -24,6 +23,12 @@ header {
     justify-content: space-between;
     z-index: 99;
     padding: auto;
+}
+
+.logo {
+    font-size: 2em;
+    color: rgb(255, 255, 255);
+    user-select: none;
 }
 
 .navigation .a1 {
@@ -60,12 +65,12 @@ header {
     width: 130px;
     height: 50px;
     background: transparent;
-    border: 2px solid rgb(255, 255, 255);
+    border: 2px solid white;
     outline: none;
     border-radius: 6px;
     cursor: pointer;
     font-size: 1.1em;
-    color: rgb(255, 255, 255);
+    color: white;
     font-weight: 500;
     margin-left: 50px;
 }
@@ -79,19 +84,19 @@ header {
     width: 130px;
     height: 50px;
     background: transparent;
-    border: 2px solid rgb(255, 255, 255);
+    border: 2px solid white;
     outline: none;
     border-radius: 6px;
     cursor: pointer;
     font-size: 1.1em;
-    color: rgb(255, 255, 255);
+    color: white;
     font-weight: 500;
     margin-left: 58.9px;
 }
 
 .navigation .btn-teleport:hover {
-    background: rgb(255, 255, 255);
-    color: #162938;
+    background: white;
+    color: rgb(0, 0, 0);
 }
 
 .navigation .btn-logout {
@@ -105,12 +110,12 @@ header {
     font-size: 1.1em;
     color: rgb(255, 255, 255);
     font-weight: 500;
-    margin-left: 57px;
+    margin-left: 58px;
 }
 
 .navigation .btn-logout:hover {
     background: rgb(255, 255, 255);
-    color: #162938;
+    color: rgb(0, 0, 0);
 }
 
 .navigation .btn-avatar {
@@ -153,27 +158,28 @@ header {
     color: #162938;
 }
 
-.form-button {
+.options{
     width: 100%;
-    height: 100%;
-    font-size: 20px;
+    color: rgb(255, 254, 254);
+    background: transparent;
     border: none;
     outline: none;
-    color: white;
-    background: transparent;
+    font-size: 20px;
+    transition: .4s;
     cursor: pointer;
+}
+
+.options:hover{
+    background: rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
+    font-size: 30px;
     transition: .4s;
 }
 
-.form-button:hover {
+.add-table {
     width: 100%;
-    height: 100%;
-    font-size: 30px;
-    color: rgb(0, 0, 0);
-    border: none;
-    outline: none;
-    background: rgb(255, 255, 255);
-    transition: .4s;
+    margin-top: 15%;
+    margin-left: 10px;
 }
 
 .input-box {
@@ -185,7 +191,6 @@ header {
 }
 
 .input-box input {
-    font-family: monospace;
     width: 100%;
     height: 100%;
     background: transparent;
@@ -195,12 +200,6 @@ header {
     color: rgb(255, 255, 255);
     font-weight: 600;
     padding: 0 35px 0 5px;
-}
-
-.add-table {
-    width: 100%;
-    margin-top: 15%;
-    margin-left: 10px;
 }
 
 form {
