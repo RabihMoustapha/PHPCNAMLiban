@@ -1,16 +1,14 @@
-<!--Start register-->
+<!--Registration-->
 <?php
 require_once "Connection.php";
 if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['pass'])) {
     $Email = $_POST["email"];
     $Name = $_POST["name"];
     $Pass = $_POST["pass"];
-    $query = "INSERT INTO `login` (`Name`, `Email`, `Password`) VALUES ('" . $Name . "', '" . $Email . "', '" . $Pass . "')";
+    $query = "INSERT INTO login (Name, Email, Password) VALUES ('" . $Name . "', '" . $Email . "', '" . $Pass . "')";
     $result = mysqli_query($Connection, $query);
     echo $result;
-    if ($result) {
-        header("location:Login.php");
-    }
+    if ($result) header("Location:Login.php");
     echo "<h4>Your information is sending to the server successfuly</h4>";
 }
 ?>
@@ -26,7 +24,22 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['pass'])) {
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js">
     </script>
     <link href="../Css/Registration.css" type="text/css" rel="stylesheet">
-    <script type="text/javascript" src="../Java Script/Registration.js"></script>
+    <script type="text/javascript">
+        function display() {
+            let pass = document.getElementById("pass");
+            let open = document.getElementById("open");
+            let close = document.getElementById("close");
+            if (pass.type == "password") {
+                pass.type = "text";
+                open.style.display = "block";
+                close.style.display = "none";
+            } else {
+                pass.type = "password";
+                open.style.display = "none";
+                close.style.display = "block";
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -37,9 +50,6 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['pass'])) {
             </h2>
             <form action="Login-Page.php" method="post">
                 <div class="input-box">
-                    <span class="icon">
-                        <ion-icon name="person-outline"></ion-icon>
-                    </span>
                     <input type="text" name="name" required>
                     <label>USERNAME</label>
                     <div class="input-box">

@@ -12,7 +12,7 @@ if (isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['comment'
     $Email = $_POST['email'];
     $Subject = $_POST['subject'];
     $Comment = $_POST['comment'];
-    $query = "Insert into contact(`Email`,`Subject`,`Comment`) values ('" . $Email . "','" . $Subject . "','" . $Comment . "')";
+    $query = "Insert into contact(Email,Subject,Comment) values ('" . $Email . "','" . $Subject . "','" . $Comment . "')";
     $result = mysqli_query($Connection, $query);
     echo "<h3>Your form has been sended</h3>";
     echo "<table align='center'><tr class='input-box'><td>";

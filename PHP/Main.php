@@ -1,22 +1,47 @@
+<!--Login verify-->
+<?php
+session_start();
+if ($_SESSION['isloggedin'] != 1) header("Location:Login.php");
+?>
+<!--Intro-->
 <?php
 require_once "Connection.php";
-session_start();
-if ($_SESSION['isloggedin'] != 1) {
-    header("Location:Login.php");
-} else {
-    $email = $_SESSION['Email'];
-    $query = "Select * from login where Email='" . $email . "'";
-    $result = mysqli_query($Connection, $query);
-    $row = mysqli_fetch_assoc($result);
-    echo "<h1 class='welcome'>Welcome $row[Name]</h1>";
-}
+$query = "Select * from login where Email='" . $_SESSION['Email'] . "'";
+$result = mysqli_query($Connection, $query);
+$row = mysqli_fetch_assoc($result);
+echo "<h3 class='welcome'>Welcome $row[Name]</h3>";
 ?>
 <html>
 
 <head>
     <title>Main</title>
     <link href="../Css/Main.css" rel="stylesheet" type="text/css">
-    <script src="../Java Script/Main.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function teleport() {
+            let intro = alert("- Home \n - Service \n - Contact \n - View \n PAGE ONLY");
+            let teleport = prompt("Enter a page to teleport");
+            teleport = teleport.toLowerCase();
+            while (teleport != "home" && teleport != "service" && teleport != "contact" && teleport != "view") {
+                intro = alert("- Home \n - Service \n - Contact \n - View \n PAGE ONLY");
+                teleport = prompt("Enter a page to teleport");
+                teleport = teleport.toLowerCase();
+            }
+            switch (teleport) {
+                case 'home':
+                    window.location.href = "Home.php";
+                    break;
+                case 'service':
+                    window.location.href = "Service.php";
+                    break;
+                case 'contact':
+                    window.location.href = "Contact.php";
+                    break;
+                case 'view':
+                    window.location.href = "View.php";
+                    break;
+            }
+        }
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -31,7 +56,7 @@ if ($_SESSION['isloggedin'] != 1) {
                             <button onclick="Form.action = 'Game.php'" class="btnlogin-popup">GAME</button>
                         </td>
                         <td>
-                            <button onclick="Form.action='Add Emoji.php'" class="btnlogin-popup">SOME EMOJI</button>
+                            <button onclick="Form.action='Add Emoji.php'" class="btnlogin-popup">ADD EMOJI</button>
                         </td>
                     </tr>
                 </table>

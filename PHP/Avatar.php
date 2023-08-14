@@ -55,7 +55,32 @@ if (isset($_FILES['image'])) {
     <title>Avatar</title>
     <link href="../Css/Avatar.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script type="text/javascript" src="../Java Script/Avatar.js"></script>
+    <script type="text/javascript">
+        function teleport() {
+            let intro = alert("- Home \n - Service \n - Contact \n - View \n PAGE ONLY");
+            let teleport = prompt("Enter a page to teleport");
+            teleport = teleport.toLowerCase();
+            while (teleport != "home" && teleport != "service" && teleport != "contact" && teleport != "view") {
+                intro = alert("- Home \n - Service \n - Contact \n - View \n PAGE ONLY");
+                teleport = prompt("Enter a page to teleport");
+                teleport = teleport.toLowerCase();
+            }
+            switch (teleport) {
+                case 'home':
+                    window.location.href = "Home.php";
+                    break;
+                case 'service':
+                    window.location.href = "Service.php";
+                    break;
+                case 'contact':
+                    window.location.href = "Contact.php";
+                    break;
+                case 'view':
+                    window.location.href = "View.php";
+                    break;
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -71,7 +96,7 @@ if (isset($_FILES['image'])) {
                     </td>
                     <td>
                         <a href="Add Emoji.php">
-                            <button class="btnlogin-popup">SOME EMOJI</button>
+                            <button class="btnlogin-popup">ADD EMOJI</button>
                         </a>
                     </td>
                 </tr>

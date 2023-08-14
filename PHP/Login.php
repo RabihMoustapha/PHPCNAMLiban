@@ -1,10 +1,10 @@
 <!--Login access-->
 <?php
 require_once "Connection.php";
-if (isset($_POST['LoginEmail']) && !empty($_POST['LoginEmail']) && isset($_POST['LoginPassword']) && !empty($_POST['LoginPassword'])) {
+if (isset($_POST['LoginEmail']) && isset($_POST['LoginPassword'])) {
     $Email = $_POST['LoginEmail'];
     $Password = $_POST['LoginPassword'];
-    $query = "SELECT * FROM `login` WHERE Password = '" . $Password . "' and Email = '" . $Email . "'";
+    $query = "SELECT * FROM login WHERE Password = '" . $Password . "' and Email = '" . $Email . "'";
     $result = mysqli_query($Connection, $query);
     $nbrow = mysqli_num_rows($result);
     if ($nbrow > 0) {
@@ -29,7 +29,22 @@ if (isset($_POST['LoginEmail']) && !empty($_POST['LoginEmail']) && isset($_POST[
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js">
     </script>
     <link href="../Css/Login.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="../Java Script/Login.js"></script>
+    <script type="text/javascript">
+        function display() {
+            let pass = document.getElementById("pass");
+            let open = document.getElementById("open");
+            let close = document.getElementById("close");
+            if (pass.type == "password") {
+                pass.type = "text";
+                open.style.display = "block";
+                close.style.display = "none";
+            } else {
+                pass.type = "password";
+                open.style.display = "none";
+                close.style.display = "block";
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -42,7 +57,7 @@ if (isset($_POST['LoginEmail']) && !empty($_POST['LoginEmail']) && isset($_POST[
                 <span class="icon">
                     <ion-icon name="mail-outline"></ion-icon>
                 </span>
-                <input type="email" name="LoginEmail">
+                <input type="email" name="LoginEmail" required>
                 <label>EMAIL</label>
             </div>
             <div class="input-box">
@@ -50,7 +65,7 @@ if (isset($_POST['LoginEmail']) && !empty($_POST['LoginEmail']) && isset($_POST[
                     <ion-icon onclick="display()" style="cursor:pointer;display:block;" id="close" name="lock-closed-outline"></ion-icon>
                     <ion-icon onclick="display()" style="cursor:pointer;display:none;" id="open" name="lock-open-outline"></ion-icon>
                 </span>
-                <input type="password" id="pass" name="LoginPassword">
+                <input type="password" id="pass" name="LoginPassword" required>
                 <label>PASSWORD</label>
             </div>
             <button class="btn">LOGIN</button>

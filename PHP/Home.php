@@ -1,24 +1,7 @@
 <!--Login verify-->
 <?php
 session_start();
-if ($_SESSION['isloggedin'] != 1) {
-    header("Location:Login.php");
-}
-?>
-<!--Insert the comment in database-->
-<?php
-require_once "Connection.php";
-if (isset($_POST['text-area']) && isset($_POST['Name']) && isset($_FILES['File']) && isset($_POST['Image_link'])) {
-    $textarea = $_POST['text-area'];
-    $Name = $_POST['Name'];
-    //$Date = $_POST['Date'];
-    $file = $_FILES['File']['name'];
-    $ImageLink = $_POST['Image_link'];
-    move_uploaded_file($_FILES['File']['tmp_name'], "../Images/" . $file);
-    $query = "INSERT INTO `home`(`Name` , `Comment` , `Image`, `ImageLink`) VALUES ('" . $Name . "' , '" . $textarea . "' , '" . $file . "', '" . $ImageLink . "')";
-    $result = mysqli_query($Connection, $query);
-    if ($result) header("location: View.php");
-}
+if ($_SESSION['isloggedin'] != 1) header("Location: Login.php");
 ?>
 <html>
 
@@ -51,9 +34,9 @@ if (isset($_POST['text-area']) && isset($_POST['Name']) && isset($_FILES['File']
     <form action="Home.php" method="post" enctype="multipart/form-data">
         <table class="hometable" cellspacing="10">
             <tr class="input-box">
-                <th align="left">Name</th>
-                <td class="first">
-                    <input required type="text" name="Name" placeholder="E.G write a name" required>
+                <th align="left" valign="top">Name</th>
+                <td class="second">
+                    <input type="text" name="username" placeholder="E.G write him name" required>
                 </td>
             </tr>
             <tr class="input-box">
@@ -61,7 +44,6 @@ if (isset($_POST['text-area']) && isset($_POST['Name']) && isset($_FILES['File']
                 <td class="second">
                     <textarea rows="7" name="text-area" placeholder="E.G write a comment" required></textarea>
                 </td>
-
             </tr>
             <tr class="input-box">
                 <th align="left">Image</th>
@@ -76,9 +58,23 @@ if (isset($_POST['text-area']) && isset($_POST['Name']) && isset($_FILES['File']
             </tr>
         </table>
         <div class="footer">
-            <button class="form-button">Insert</button>
+            <input type="submit" value="Insert" class="form-button">
         </div>
     </form>
+    <!--Insert the comment in database-->
+    <?php
+    require_once "Connection.php";
+    if (isset($_POST['username']) && isset($_POST['text-area']) && isset($_FILES['File']) && isset($_POST['Image_link'])) {
+        $name = $_POST['username'];
+        $textarea = $_POST['text-area'];
+        $file = $_FILES['File']['name'];
+        move_uploaded_file($_FILES['File']['tmp_name'], "../Images/" . $file);
+        $ImageLink = $_POST['Image_link'];
+        $query = "INSERT INTO `home`(`Name`, `Email`, `Comment` , `Image`, `ImageLink`) VALUES ('" . $name . "', '".$_SESSION['Email']."', '" . $textarea . "' , '" . $file . "', '" . $ImageLink . "')";
+        $result = mysqli_query($Connection, $query);
+        if ($result) header("Location: View.php");
+    }
+    ?>
 </body>
 
 </html>

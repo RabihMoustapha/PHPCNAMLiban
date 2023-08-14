@@ -1,3 +1,4 @@
+	<!--Login verify-->
 	<?php
 	session_start();
 	if ($_SESSION['isloggedin'] != 1) {
@@ -12,7 +13,21 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="../Css/Service.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<script src="../Java Script/Service.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			function accept() {
+				let p = prompt("Yes or No?");
+				p = p.toUpperCase();
+				if (p === "YES") {
+					alert("Ok accept");
+					window.location.href = "Contact.php";
+				} else {
+					if (p === "NO")
+						alert("Thanks for viewing my website");
+					else
+						alert("Enter one of thiese two values");
+				}
+			}
+		</script>
 	</head>
 
 	<body>
@@ -38,7 +53,7 @@
 					<h1>Our Services</h1>
 					<div class="row service">
 						<div class="col-md-3 text-center">
-							<div class="icon" onclick="Accept()">
+							<div class="icon" onclick="accept()">
 								<i class="fa fa-paint-brush" style="font-size:2em;margin-left:6px;margin-top:10px"></i>
 							</div>
 							<h3>Web <span>client</span></h3>

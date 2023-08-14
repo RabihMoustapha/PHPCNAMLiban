@@ -13,7 +13,7 @@ body {
     background-size: cover;
     background-position: center;
     background: url("../desktop-wallpaper.jpg") no-repeat;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 header {
@@ -80,7 +80,7 @@ header {
 
 .navigation .btnlogin-popup:hover {
     background: rgb(255, 255, 255);
-    color: #162938;
+    color: rgb(0, 0, 0);
 }
 
 .navigation .btn-teleport {

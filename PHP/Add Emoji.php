@@ -1,16 +1,18 @@
+<!--Login verify-->
 <?php
-require_once "Connection.php";
 session_start();
 if ($_SESSION['isloggedin'] != 1) header("Location: Login.php");
-else {
-    if (isset($_POST['Name']) && !empty($_POST['Name']) && isset($_FILES['Image']) && !empty($_FILES['Image'])) {
-        $name = $_POST['Name'];
-        $image = $_FILES['Image']['name'];
-        move_uploaded_file($_FILES['Image']['tmp_name'], "../Emojis/" . $image);
-        $query = "Insert into emoji(Name, Image) values('" . $name . "', '" . $image . "')";
-        $result = mysqli_query($Connection, $query);
-        if ($result) header("Location: Emoji.php");
-    }
+?>
+<!--Insert the data-->
+<?php
+require_once "Connection.php";
+if (isset($_POST['Name']) && !empty($_POST['Name']) && isset($_FILES['Image']) && !empty($_FILES['Image'])) {
+    $name = $_POST['Name'];
+    $image = $_FILES['Image']['name'];
+    move_uploaded_file($_FILES['Image']['tmp_name'], "../Emojis/" . $image);
+    $query = "Insert into emoji(Name, Image) values('" . $name . "', '" . $image . "')";
+    $result = mysqli_query($Connection, $query);
+    if ($result) header("Location: Emoji.php");
 }
 ?>
 <html>
@@ -20,7 +22,32 @@ else {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Emoji</title>
     <link rel="stylesheet" type="text/css" href="../Css/Add Emoji.css">
-    <script type="text/javascript" src="../Java Script/Add Emoji.js"></script>
+    <script type="text/javascript">
+        function teleport() {
+            let intro = alert("- Home \n - Service \n - Contact \n - View \n PAGE ONLY");
+            let teleport = prompt("Enter a page to teleport");
+            teleport = teleport.toLowerCase();
+            while (teleport != "home" && teleport != "service" && teleport != "contact" && teleport != "view") {
+                intro = alert("- Home \n - Service \n - Contact \n - View \n PAGE ONLY");
+                teleport = prompt("Enter a page to teleport");
+                teleport = teleport.toLowerCase();
+            }
+            switch (teleport) {
+                case 'home':
+                    window.location.href = "Home.php";
+                    break;
+                case 'service':
+                    window.location.href = "Service.php";
+                    break;
+                case 'contact':
+                    window.location.href = "Contact.php";
+                    break;
+                case 'view':
+                    window.location.href = "View.php";
+                    break;
+            }
+        }
+    </script>
 </head>
 
 <body>

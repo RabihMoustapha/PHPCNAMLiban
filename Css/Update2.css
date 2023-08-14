@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background: url("../desktop-wallpaper.jpg") no-repeat;
+    color: white;
+}
+
+header {
+    margin-top: 1em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    z-index: 99;
+    padding: auto;
+}
+
+.logo {
+    font-size: 2em;
+    color: rgb(255, 255, 255);
+    user-select: none;
+}
+
+.navigation .a1 {
+    position: relative;
+    font-size: 1.1em;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+
+}
+
+.navigation .a1::after {
+    content: '';
+    right: 1px;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+    bottom: -6px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .5s;
+}
+
+.navigation .a1:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.navigation .btnlogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid rgb(255, 255, 255);
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    margin-left: 50px;
+}
+
+.navigation .btnlogin-popup:hover {
+    background: rgb(255, 255, 255);
+    color: #162938;
+}
+
+.hometable {
+    margin-top: 10%;
+    margin-left: 2%;
+}
+
+.form-button{
+    border-radius: 4px;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    background: transparent;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    transition: .4s;
+}
+
+.form-button:hover{
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+    font-size: 23px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    transition: .4s;
+}
+
+.not-visited{
+	color: rgb(0, 255, 0);
+	font-weight: bold;
+    cursor: progress;
+    width: 100%;
+}
+
+form {
+    margin-top: 4rem;
+    width: 100%;
+}
+
+.hometable {
+    width: 100%;
+    padding-top:3em;
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    margin-top: 100px;
+}
+
+.hometable tr .first {
+    width: 15%;
+}
+
+.hometable tr .second {
+    width: 85%;
+}
+
+input {
+    padding: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.area {
+    width: 100%;
+    resize: none;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+.footer {
+    padding: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hometable input {
+    font-family: monospace;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.hometable textarea {
+    font-family: monospace;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+input[type=submit]{
+    transition: .4s;
+    color:rgb(255, 255, 255);
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 22px;
+    background: transparent;
+    outline: none;
+    border: none;
+}
+
+input[type=submit]:hover{
+    background: rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
+    font-size: 36px;
+    transition: .4s;
+}
