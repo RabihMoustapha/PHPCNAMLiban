@@ -27,12 +27,9 @@ if ($_SESSION['isloggedin'] != 1) header("Locaton: Login.php");
     <!--Display the comment-->
     <?php
     require_once "Connection.php";
-    $query = "SELECT * FROM login where Email='" . $_SESSION['Email'] . "'";
-    $result = mysqli_query($Connection, $query);
-    $Row = mysqli_fetch_assoc($result);
-    $query1 = "SELECT * FROM home";
-    $result1 = mysqli_query($Connection,  $query1);
-    $nbrow = mysqli_num_rows($result1);
+    $query = "SELECT * FROM home";
+    $result = mysqli_query($Connection,  $query);
+    $nbrow = mysqli_num_rows($result);
     ?>
     <table cellspacing="30" class="datatable" align="center">
         <th>Name</th>
@@ -44,9 +41,8 @@ if ($_SESSION['isloggedin'] != 1) header("Locaton: Login.php");
         <th>Delete</th>
         </tr>
         <?php
-        $name = $Row['Name'];
         for ($i = 0; $i < $nbrow; $i++) {
-            $row = mysqli_fetch_assoc($result1);
+            $row = mysqli_fetch_assoc($result);
             $Image = $row['Image'];
             $Name = $row['Name'];
             echo "<tr>";
@@ -55,7 +51,7 @@ if ($_SESSION['isloggedin'] != 1) header("Locaton: Login.php");
             echo "<td>$row[Date]</td>";
             echo "<td><a href='$row[ImageLink]'><img class='user' src='../Images/$Image'></a></td>";
             echo "<td><a href='../Images/" . $Image . "' download><img src='../Image.png'></a></td>";
-            if ($Row['Email'] == $row['Email']) {
+            if ($_SESSION['Email'] == $row['Email']) {
                 echo "<td><a href='Update.php?name=$row[Name]'><img src='../edit.png'></a></td>";
                 echo "<td><a href='Delete.php?name=$row[Name]'><img src='../drop.png'></a></td>";
             }

@@ -8,15 +8,14 @@ if ($_SESSION['isloggedin'] != 1) {
 <!--Insert the data-->
 <?php
 require_once "Connection.php";
-if (isset($_FILES['gamepicture']) && !empty($_FILES['gamepicture']) && isset($_POST['downloability']) && !empty($_POST['downloability']) && isset($_POST['ref']) && !empty($_POST['ref']) && isset($_POST['titleref']) && !empty($_POST['titleref'])) {
+if (isset($_FILES['gamepicture']) && !empty($_FILES['gamepicture']) && isset($_POST['downloability']) && !empty($_POST['downloability']) && isset($_POST['ref']) && !empty($_POST['ref'])) {
     $game = $_FILES['gamepicture']['name'];
     move_uploaded_file($_FILES['gamepicture']['tmp_name'], "../Images/" . $game);
     $down = $_POST['downloability'];
-    $titleref = $_POST['titleref'];
     $ref = $_POST['ref'];
-    $query = "INSERT into view(GameImg ,TitleReference, Downloability , Reference) VALUES ('" . $game . "','" . $titleref . "','" . $down . "','" . $ref . "')";
+    $query = "INSERT into view(GameImg , Downloability , Reference) VALUES ('" . $game . "','" . $down . "','" . $ref . "')";
     $result = mysqli_query($Connection, $query);
-    if ($result) header("location: GameView.php");
+    if ($result) header("Location: GameView.php");
 }
 ?>
 <html>
@@ -114,21 +113,15 @@ if (isset($_FILES['gamepicture']) && !empty($_FILES['gamepicture']) && isset($_P
                 </td>
             </tr>
             <tr class="input-box">
-                <th>Video Link</th>
-                <td class="first">
-                    <input type="text" name="titleref" placeholder="Video about the game">
-                </td>
-            </tr>
-            <tr class="input-box">
                 <th>Downloability</th>
                 <td class="second">
-                    <input type="text" name="downloability" placeholder=" machine">
+                    <input type="text" name="downloability" placeholder="machine">
                 </td>
             </tr>
             <tr class="input-box">
-                <th>Link about the game history</th>
+                <th>Game History</th>
                 <td class="second">
-                    <input type="text" name="ref" placeholder="Game history">
+                    <pre><input type="text" name="ref" placeholder="Game history"></pre>
                 </td>
             </tr>
         </table>

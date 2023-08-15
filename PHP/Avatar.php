@@ -137,7 +137,6 @@ if (isset($_FILES['image'])) {
             <img src="../Avatar/<?php echo $Image ?>" width="125" height="125" title="<?php echo $Image ?>">
             <div class="round">
                 <input type="file" name="image" id="image" accept=".jpg, .jpeg, .png" required>
-                <i class="fa fa-camera"></i>
             </div>
         </div>
     </form>

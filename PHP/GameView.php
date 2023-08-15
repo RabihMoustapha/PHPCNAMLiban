@@ -93,25 +93,25 @@ if ($_SESSION['isloggedin'] != 1) header("Location: Login.php");
     <!--Display the data-->
     <?php
     require_once "Connection.php";
-    $query1 = "Select * from view";
-    $result1 = mysqli_query($Connection, $query1);;
-    $nbr = mysqli_num_rows($result1);
+    $query = "Select * from view";
+    $result = mysqli_query($Connection, $query);
+    $nbr = mysqli_num_rows($result);
     ?>
     <table class="datatable" cellspacing="25">
         <tr>
             <th>Date</th>
             <th>Picture</th>
             <th>Downloability</th>
-            <th>Link about game history</th>
+            <th>Game History</th>
         </tr>
         <?php
         for ($i = 0; $i < $nbr; $i++) {
-            $row = mysqli_fetch_assoc($result1);
+            $row = mysqli_fetch_assoc($result);
             echo "<tr>";
             echo "<td>$row[Date]</td>";
-            echo "<td><a href='$row[TitleReference]' class='linkrow'><img src='../Images/$row[GameImg]' class='user'></a></td>";
+            echo "<td><img id='Img' src='../Images/$row[GameImg]' class='user'></td>";
             echo "<td>$row[Downloability]</td>";
-            echo "<td><a href='$row[Reference]' class='linkrow'>$row[Reference]</a></td>";
+            echo "<td><pre>$row[Reference]</pre></td>";
             echo "</tr>";
         }
         echo "</table>";
