@@ -8,15 +8,14 @@ if ($_SESSION['isloggedin'] != 1) {
 <!--Insert the data-->
 <?php
 require_once 'Connection.php';
-if (isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['comment'])) {
+if (isset($_POST['email']) && isset($_POST['subject'])) {
     $Email = $_POST['email'];
     $Subject = $_POST['subject'];
-    $Comment = $_POST['comment'];
-    $query = "Insert into contact(Email,Subject,Comment) values ('" . $Email . "','" . $Subject . "','" . $Comment . "')";
+    $query = "Insert into contact(Email,Subject) values ('" . $Email . "','" . $Subject . "')";
     $result = mysqli_query($Connection, $query);
     echo "<h3>Your form has been sended</h3>";
     echo "<table align='center'><tr class='input-box'><td>";
-    echo "<img src='yes.png'></td></tr></table>";
+    echo "<img src='../edit.png'></td></tr></table>";
 }
 ?>
 <!doctype html>
@@ -97,7 +96,7 @@ if (isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['comment'
                     </b>
                 </td>
                 <td>
-                    <textarea class="area" rows="7" required placeholder="Text here..."></textarea>
+                    <textarea class="area" name="subject" rows="7" required placeholder="Text here..."></textarea>
                 </td>
             </tr>
         </table>
