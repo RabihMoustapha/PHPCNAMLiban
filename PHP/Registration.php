@@ -5,11 +5,9 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['pass'])) {
     $Email = $_POST["email"];
     $Name = $_POST["name"];
     $Pass = $_POST["pass"];
-    $query = "INSERT INTO login (Name, Email, Password) VALUES ('" . $Name . "', '" . $Email . "', '" . $Pass . "')";
+    $query = "INSERT INTO `login` (`Name`, Email, `Password`) VALUES ('" . $Name . "', '" . $Email . "', '" . $Pass . "')";
     $result = mysqli_query($Connection, $query);
-    echo $result;
-    if ($result) header("Location:Login.php");
-    echo "<h4>Your information is sending to the server successfuly</h4>";
+    if($result) header("Location:Login.php");
 }
 ?>
 <html>
@@ -48,7 +46,7 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['pass'])) {
             <h2>
                 REGISTRATION
             </h2>
-            <form action="Login-Page.php" method="post">
+            <form action="Registration.php" method="post">
                 <div class="input-box">
                     <input type="text" name="name" required>
                     <label>USERNAME</label>
