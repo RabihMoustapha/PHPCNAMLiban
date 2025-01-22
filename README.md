@@ -1,2 +1,7 @@
 # GameHub
-A Game Hub project for university
+# University
+# Project
+# Login
+# Logout
+# Home
+# Download
