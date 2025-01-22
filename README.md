@@ -18,3 +18,6 @@ Home generally refers to the starting page or primary interface of a website or 
 
 # Download
 Download is the process of transferring data from the internet or a remote server to a local device, such as a computer or smartphone. Users can download files, software, media, or updates, making them accessible for offline use or installation.
+
+# PHP
+PHP (Hypertext Preprocessor) is a widely-used, open-source server-side scripting language primarily designed for web development. It is embedded within HTML and allows developers to create dynamic, interactive websites. PHP can interact with databases, manage sessions, process form data, and handle various server-side functions. It is known for its ease of use, flexibility, and strong integration with databases like MySQL, making it a popular choice for building web applications and websites.
